@@ -14,7 +14,7 @@ This script performs Google dorking to find URLs based on a user-provided dorkin
 
 2. Install the required libraries:
     ```sh
-    pip install googlesearch-python requests
+    pip install googlesearch-python requests colorama
     ```
 
 ## Usage
