@@ -1,5 +1,15 @@
 import requests
 from googlesearch import search
+from colorama import init, Fore, Style
+
+# Initialize colorama
+init()
+
+def print_banner():
+    banner = """
+		Made By Unrealisedd                                     
+    """
+    print(Fore.CYAN + banner + Style.RESET_ALL)
 
 def get_google_dorking_parameter():
     dork = input("Enter the Google dorking parameter (e.g., inurl:\"?id=\"): ")
@@ -35,6 +45,7 @@ def is_vulnerable_to_sqli(url):
     return False
 
 def main():
+    print_banner()
     dork = get_google_dorking_parameter()
     num_requests = get_number_of_requests()
     urls = fetch_urls(dork, num_requests)
@@ -44,9 +55,9 @@ def main():
     for url in urls:
         print(f"Testing URL: {url}")
         if is_vulnerable_to_sqli(url):
-            print(f"Vulnerable to SQL injection: {url}")
+            print(Fore.GREEN + f"Vulnerable to SQL injection: {url}" + Style.RESET_ALL)
         else:
-            print(f"Not vulnerable to SQL injection: {url}")
+            print(Fore.RED + f"Not vulnerable to SQL injection: {url}" + Style.RESET_ALL)
 
 if __name__ == "__main__":
     main()
