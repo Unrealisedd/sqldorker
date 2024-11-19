@@ -21,7 +21,7 @@ This script performs Google dorking to find URLs based on a user-provided dorkin
 
 1. Run the script:
     ```sh
-    python dorking_sqli_tester.py
+    python sqldorker.py
     ```
 
 2. Enter the Google dorking parameter when prompted (e.g., `inurl:"?id="`).
